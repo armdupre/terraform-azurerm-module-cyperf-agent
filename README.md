@@ -1,1 +1,1 @@
-# terraform-azurerm-module-cyperf-agent
+# module-cyperf-agent/azurerm

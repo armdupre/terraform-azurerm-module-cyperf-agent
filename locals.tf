@@ -1,8 +1,8 @@
 locals {
 	AdminUserName = var.AdminUserName
 	AppEth0IpAddress = var.AppEth0IpAddress
-	DisablePasswordAuthentication = true
-	DnsLabel = join("", [lower(replace(local.ResourceGroupName, "_", "-")), "-", lower("${local.Tag}-${local.InstanceId}"), "-", local.uuid])
+	DisablePasswordAuthentication = var.DisablePasswordAuthentication
+	DnsLabel = "${local.Preamble}-dns"
 	EnableAcceleratedNetworking = var.EnableAcceleratedNetworking
 	EnableIpForwarding = var.EnableIpForwarding
 	Eth0IpAddress = var.Eth0IpAddress
@@ -20,7 +20,7 @@ locals {
 	MarketplaceImageOfferId = var.MarketplaceImageOfferId
 	MarketplaceImageProductId = local.MarketplaceImageOfferId
 	MarketplaceImagePublisherId = var.MarketplaceImagePublisherId
-	Preamble = "${local.UserLoginTag}-${local.Tag}-${local.InstanceId}"
+	Preamble = "${local.UserLoginTag}-${local.UserProjectTag}-${local.Tag}-${local.Version}-${local.InstanceId}"
 	ResourceGroupLocation = var.ResourceGroupLocation
 	ResourceGroupName = var.ResourceGroupName
 	SshKeyName = var.SshKeyName
@@ -28,8 +28,8 @@ locals {
 	UserEmailTag = var.UserEmailTag
 	UserLoginTag = var.UserLoginTag
 	UserProjectTag = var.UserProjectTag
+	Version = var.Version
 	VmSize = var.VmSize
-	uuid = "${substr(uuid(), 1, 6)}"
 }
 
 locals {

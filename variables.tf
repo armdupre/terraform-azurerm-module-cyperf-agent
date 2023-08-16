@@ -1,5 +1,6 @@
 variable "AdminUserName" {
 	default = "azure"
+	description = "Id of the VM administrator account"
 	type = string
 }
 
@@ -10,21 +11,25 @@ variable "AppEth0IpAddress" {
 
 variable "DisablePasswordAuthentication" {
 	default = true
+	description = "Disable SSH password auth in favor of key-based auth"
 	type = bool
 }
 
 variable "EnableAcceleratedNetworking" {
 	default = true
+	description = "Enables SR-IOV on supported VMs to improve networking performance"
 	type = bool
 }
 
 variable "EnableIpForwarding" {
 	default = true
+	description = "Enables forwarding of network traffic to an address not assigned to VM"
 	type = bool
 }
 
 variable "Eth0IpAddress" {
 	default = "10.0.10.11"
+	description = "Private ip address associated with the first network interface"
 	type = string
 }
 
@@ -35,6 +40,7 @@ variable "Eth0SubnetId" {
 
 variable "Eth1IpAddresses" {
 	default = ["10.0.2.12"]
+	description = "Private ip addresses associated with the second network interface"
 	type = list(string)
 }
 
@@ -75,14 +81,17 @@ variable "MarketplaceImagePublisherId" {
 
 variable "ResourceGroupLocation" {
 	default = "East US"
+	description = "Location of container metadata and control plane operations"
 	type = string
 }
 
 variable "ResourceGroupName" {
+	description = "Id of container that holds related resources that you want to manage together"
 	type = string
 }
 
 variable "SshKeyName" {
+	description = "Id associated with SSH key pair used for authentication"
 	type = string
 }
 
@@ -126,6 +135,7 @@ variable "Version" {
 
 variable "VmSize" {
 	default = "Standard_F8s_v2"
+	description = "Category, series and instance specifications associated with the VM"
 	type = string
 	validation {
 		condition = contains([	"Standard_F4s_v2",	"Standard_F8s_v2",	"Standard_F16s_v2",	"Standard_F64s_v2"

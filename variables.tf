@@ -50,13 +50,13 @@ variable "Eth1SubnetId" {
 }
 
 variable "ImageSku" {
-	default = "keysight-cyperf-agent-26"
+	default = "keysight-cyperf-agent-25"
 	description = "An instance of an offer, such as a major release of a distribution."
 	type = string
 }
 
 variable "ImageVersion" {
-	default = "0.2.6"
+	default = "0.2.5"
 	description = "The version number of an image SKU."
 	type = string
 }

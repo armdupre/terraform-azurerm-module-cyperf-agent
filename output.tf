@@ -1,7 +1,7 @@
 output "Eth0PublicIpAddress" {
 	description = "Public ip address resource associated with the first network interface"
 	value = {
-		"fqdn" : "https://${azurerm_public_ip.Eth0PublicIpAddress.fqdn}"
+		"fqdn" : azurerm_public_ip.Eth0PublicIpAddress.fqdn
 		"ip_address" : azurerm_public_ip.Eth0PublicIpAddress.ip_address
 	}
 }
